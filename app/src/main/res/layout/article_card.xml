@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="article"
+            type="com.example.mideum.models.domain.Article" />
+
+        <variable
+            name="clickListener"
+            type="com.example.mideum.ui.home.ArticleCardClickListener"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+            android:id="@+id/image_card"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
+            app:loadImage="@{article.author.image}"
+            android:onClick="@{() -> clickListener.onProfileClick(article.author)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/ic_baseline_emoji_emotions_24" />
+
+        <TextView
+            android:id="@+id/username_comment_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:text="@{article.author.username}"
+            android:onClick="@{() -> clickListener.onProfileClick(article.author)}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintBottom_toTopOf="@+id/dateAndTime_comment_card"
+            app:layout_constraintStart_toEndOf="@+id/image_card"
+            app:layout_constraintTop_toTopOf="@+id/image_card"
+            tools:text="username" />
+
+        <TextView
+            android:id="@+id/dateAndTime_comment_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:text="@string/date"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintBottom_toBottomOf="@+id/image_card"
+            app:layout_constraintStart_toEndOf="@+id/image_card"
+            app:layout_constraintTop_toBottomOf="@+id/username_comment_card"
+            app:setDate="@{article.createdAt}" />
+
+        <TextView
+            android:id="@+id/title_article_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@{article.title}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:onClick="@{() -> clickListener.onArticleClick(article)}"
+            app:layout_constraintTop_toBottomOf="@+id/image_card"
+            tools:text="title" />
+
+        <TextView
+            android:id="@+id/description_article_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@{article.description}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_article_card"
+            android:onClick="@{() -> clickListener.onArticleClick(article)}"
+            tools:text="Body" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

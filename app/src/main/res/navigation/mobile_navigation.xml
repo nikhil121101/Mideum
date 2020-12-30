@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_global_feed">
+
+    <fragment
+        android:id="@+id/nav_auth"
+        android:name="com.example.mideum.ui.auth.AuthFragment"
+        android:label="Authorization"
+        tools:layout="@layout/auth_fragment" >
+        <action
+            android:id="@+id/action_nav_auth_to_myFeedFragment"
+            app:destination="@id/nav_my_feed"
+            app:popUpTo="@id/nav_my_feed" />
+    </fragment>
+    <fragment
+        android:id="@+id/articleView"
+        android:name="com.example.mideum.ui.articleView.ArticleViewFragment"
+        android:label="Article"
+        tools:layout="@layout/article_view_fragment" >
+        <argument
+            android:name="article_arg"
+            app:argType="com.example.mideum.models.domain.Article" />
+        <action
+            android:id="@+id/action_articleView_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/articleView" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.mideum.ui.profileView.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/profile_fragment" >
+        <argument
+            android:name="profile"
+            app:argType="com.example.mideum.models.domain.Profile" />
+        <action
+            android:id="@+id/action_profileFragment_to_articleView"
+            app:destination="@id/articleView" />
+        <action
+            android:id="@+id/action_profileFragment_self"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.example.mideum.ui.settings.SettingsFragment"
+        android:label="Settings" >
+        <action
+            android:id="@+id/action_nav_settings_to_nav_auth"
+            app:destination="@id/nav_auth"
+            app:popUpTo="@id/nav_auth" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_global_feed"
+        android:name="com.example.mideum.ui.home.GlobalFeedFragment"
+        android:label="Global Feed"
+        tools:layout="@layout/feed_fragment_global" >
+        <action
+            android:id="@+id/action_globalFeedFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_globalFeedFragment_to_articleView"
+            app:destination="@id/articleView" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_my_feed"
+        android:name="com.example.mideum.ui.home.MyFeedFragment"
+        android:label="My Feed"
+        tools:layout="@layout/feed_fragment_my_feed" >
+        <action
+            android:id="@+id/action_myFeedFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_myFeedFragment_to_articleView"
+            app:destination="@id/articleView" />
+        <action
+            android:id="@+id/action_nav_my_feed_to_createArticleFragment"
+            app:destination="@id/createArticleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createArticleFragment"
+        android:name="com.example.mideum.ui.createArticle.CreateArticleFragment"
+        android:label="Create Article"
+        tools:layout="@layout/create_article_fragment" >
+        <action
+            android:id="@+id/action_createArticleFragment_to_articleView"
+            app:destination="@id/articleView"
+            app:popUpTo="@id/nav_my_feed" />
+    </fragment>
+</navigation>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="comment"
+            type="com.example.mideum.models.domain.Comment" />
+
+        <variable
+            name="commentClickListener"
+            type="com.example.mideum.ui.articleView.commentSection.CommentClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image_comment_card"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_baseline_emoji_emotions_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:loadImage="@{comment.author.image}" />
+
+        <TextView
+            android:id="@+id/username_comment_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:text="@{comment.author.username}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintBottom_toTopOf="@+id/dateAndTime_comment_card"
+            app:layout_constraintStart_toEndOf="@+id/image_comment_card"
+            app:layout_constraintTop_toTopOf="@+id/image_comment_card"
+            tools:text="username" />
+
+        <TextView
+            android:id="@+id/dateAndTime_comment_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:text="@string/date"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintBottom_toBottomOf="@+id/image_comment_card"
+            app:layout_constraintStart_toEndOf="@+id/image_comment_card"
+            app:layout_constraintTop_toBottomOf="@+id/username_comment_card"
+            app:setDate="@{comment.createdAt}" />
+
+        <TextView
+            android:id="@+id/comment_body"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@{comment.body}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_comment_card" />
+
+        <ImageButton
+            android:id="@+id/delete_comment"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/white"
+            android:onClick="@{() -> commentClickListener.deleteComment(comment)}"
+            android:src="@drawable/ic_baseline_delete_forever_24"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:tint="#E60E0E"
+            app:icon="@drawable/ic_baseline_delete_24"
+            app:layout_constraintBottom_toBottomOf="@+id/image_comment_card"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/image_comment_card" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
