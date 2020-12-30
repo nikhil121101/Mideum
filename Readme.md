@@ -18,8 +18,8 @@ For more information on how to this works with other frontends/backends, head ov
 Blogging website with user authentication where user can create blog articles , follow other users , favourite articles etc
 
 ## Built and design
-Built in MVVM(Model view view model) architecture
-communicate with the backend api of[Real world](https://github.com/gothinkster/realworld) using retrofit library
+Built in MVVM(Model view view model) architecture\
+communicates with the backend api of [Real world](https://github.com/gothinkster/realworld) using retrofit library\
 uses Android Jetpack libraries like navigation
 Glide library for image processing
 
