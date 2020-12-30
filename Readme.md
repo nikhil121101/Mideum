@@ -15,7 +15,7 @@ For more information on how to this works with other frontends/backends, head ov
 
 # How it works
 
-Blogging website with user authentication where user can create blog articles , follow other users , favourite articles etc
+Blogging Android app with user authentication where user can create blog articles , follow other users , favourite articles etc
 
 ## Built and design
 Built in MVVM(Model view view model) architecture\
