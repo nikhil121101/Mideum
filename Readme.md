@@ -1,4 +1,4 @@
-# ![RealWorld Example App](logo.png)
+# ![RealWorld Example App](https://cloud.githubusercontent.com/assets/556934/25672246/9a20e960-2fe7-11e7-99d3-23652878a2c2.png)
 
 > ### Kotlin codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the [RealWorld](https://github.com/gothinkster/realworld) spec and API.
 
@@ -15,9 +15,11 @@ For more information on how to this works with other frontends/backends, head ov
 
 # How it works
 
-> Describe the general architecture of your app here
+Blogging website with user authentication where user can create blog articles , follow other users , favourite articles etc
 
-# Getting started
-
-> npm install, npm start, etc.
+#Built and design
+Built in MVVM(Model view view model) architecture
+communicate with the backend api of[Real world](https://github.com/gothinkster/realworld) using retrofit library
+uses Android Jetpack libraries like navigation
+Glide library for image processing
 
