@@ -24,7 +24,7 @@ uses Android Jetpack libraries like navigation
 Glide library for image processing
 
 # Screenshots
-
-![](screenshots/Screenshot_1.png)|![](screenshots/Screenshot_2.png)
-![](screenshots/Screenshot_2.png)|![](screenshots/Screenshot_4.png)
-![](screenshots/Screenshot_5.png)
+<img src="screenshots/Screenshot_1.png" width="425"/> <img src="2" width="425"/>
+<!--![](screenshots/Screenshot_1.png)|![](screenshots/Screenshot_2.png)-->
+<!--![](screenshots/Screenshot_2.png)|![](screenshots/Screenshot_4.png)-->
+<!--![](screenshots/Screenshot_5.png)-->
