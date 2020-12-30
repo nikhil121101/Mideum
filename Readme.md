@@ -23,3 +23,8 @@ communicates with the backend api of [Real world](https://github.com/gothinkster
 uses Android Jetpack libraries like navigation
 Glide library for image processing
 
+# Screenshots
+
+![](screenshots/Screenshot_1.png) ![](screenshots/Screenshot_2.png)
+![](screenshots/Screenshot_2.png) ![](screenshots/Screenshot_4.png)
+![](screenshots/Screenshot_5.png)
