@@ -24,6 +24,6 @@ uses Android Jetpack libraries like navigation
 Glide library for image processing
 
 # Screenshots
-<img src="screenshots/Screenshot_1.png" width="425"/> <img src="screenshots/Screenshot_2.png" width="425"/>
-<img src="screenshots/Screenshot_3.png" width="425"/> <img src="screenshots/Screenshot_4.png" width="425"/>
-<img src="screenshots/Screenshot_5.png" width="425"/>
+<img src="screenshots/Screenshot_1.png" width="325"/> <img src="screenshots/Screenshot_2.png" width="325"/>
+<img src="screenshots/Screenshot_3.png" width="325"/> <img src="screenshots/Screenshot_4.png" width="325"/>
+<img src="screenshots/Screenshot_5.png" width="325"/>
